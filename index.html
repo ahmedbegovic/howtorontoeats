@@ -100,7 +100,7 @@
     <div><h3>Most hated</h3><table class="rows" id="v-negative"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Most controversial</h3><table class="rows" id="v-controversial"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">Loved and hated are ranked by the low end of a 95% interval on the share of positive or negative mentions. Branches of one restaurant are counted together, and neutral mentions don't count for either side. "Holds" is how often a place stays in its top ten when I rerun the ranking <span id="v-reruns"></span> times. Each rerun resamples the place's threads and redraws every label using the error rates from the accuracy check. On average <span id="v-kp"></span> of the ten most loved hold, <span id="v-kn"></span> of the most hated and <span id="v-kc"></span> of the most controversial. <span id="v-pool"></span> places make the loved top ten in at least one rerun in twenty.</p>
+  <p class="note">Loved and hated are ranked by the share of positive or negative mentions, adjusted so that places with only a few mentions rank lower. Branches of the same restaurant are counted together. "Holds" is how often a place stayed in the top ten over <span id="v-reruns"></span> reruns that allow for the model's labelling mistakes.</p>
 </section>
 
 <section id="turns">
@@ -109,13 +109,13 @@
   <div class="figs">
     <p><b id="t-n"></b>restaurants with at least 20 mentions in both periods</p>
     <p><b><span id="t-med"></span> points</b>typical change in net sentiment</p>
-    <p><b id="t-sig"></b>moved by more than chance</p>
+    <p><b id="t-sig"></b>changed significantly</p>
   </div>
   <div class="grid g2">
     <div><h3>Soured on</h3><table class="rows" id="t-soured"><thead><tr><th>Restaurant</th><th class="r">2025</th><th class="r">2026</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Warmed to</h3><table class="rows" id="t-warmed"><thead><tr><th>Restaurant</th><th class="r">2025</th><th class="r">2026</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">"More than chance" means the swing is at least three standard errors wide once the sub-wide drift of <span id="t-drift"></span> points between the two periods is taken out. The mention counts under each name are for 2025, then 2026.</p>
+  <p class="note">A change counts as significant if it is at least three standard errors, after subtracting the <span id="t-drift"></span> point shift across the whole sub. The numbers under each name are mentions in 2025, then 2026.</p>
 </section>
 
 <section id="closures">
@@ -131,7 +131,7 @@
     <div><h3>Models compared</h3><table class="rows" id="c-models"><thead><tr><th>Inputs</th><th class="r">AUC</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
     <div><h3>What moves the odds of closing</h3><table class="rows" id="c-odds"><thead><tr><th>One standard deviation more of</th><th class="r">Odds</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">AUC is the chance that the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. The scores come from five-fold cross-validation repeated 20 times, and the intervals from resampling places. The odds are from the model with all five inputs, where below 1 means less likely to close. Google doesn't give closing dates, so I left out <span id="c-gone"></span> places that the sub was already calling closed before 2026, and I kept comments with closure words out of the inputs. When I look only at the <span id="c-rn"></span> places still being mentioned in 2026 (<span id="c-rc"></span> closures), the gain from sentiment is the same size but its interval (<span id="c-rci"></span>) includes zero.</p>
+  <p class="note">AUC is how often the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. Odds below 1 mean less likely to close. For the <span id="c-rn"></span> places still mentioned in 2026 (<span id="c-rc"></span> closures), the 95% interval for the gain from sentiment is <span id="c-rci"></span>, which includes zero.</p>
 </section>
 
 <section id="votes">
@@ -153,12 +153,17 @@
   </div>
   <h3>Most mentioned arrivals</h3>
   <div class="scroll"><table class="rows" id="h-big"><thead><tr><th>Restaurant</th><th>First mentioned</th><th>Pattern</th><th class="r">Biggest thread</th><th class="r">Mentions</th></tr></thead><tbody></tbody></table></div>
-  <p class="note">"One thread" means half or more of a place's mentions are in a single thread. "Flash" means 60% or more of the mentions in its first seven months came in the first two. "Steady" means under 35% did, and "fading" is anything in between. "Too recent" means there are fewer than seven months of data. "New" means new to the sub.</p>
+  <dl class="method note">
+    <dt>One thread</dt><dd>Half or more of its mentions are in a single thread.</dd>
+    <dt>Flash</dt><dd>60% or more of the mentions in its first seven months came in the first two.</dd>
+    <dt>Fading</dt><dd>Between 35% and 60% came in the first two months.</dd>
+    <dt>Steady</dt><dd>Less than 35% came in the first two months.</dd>
+  </dl>
 </section>
 
 <section id="together">
   <h2>Restaurants mentioned together</h2>
-  <p class="sub">If a comment mentions between two and eight restaurants, I link them. I only keep pairs that show up together much more often than you'd expect from how popular each one is. The groups below come out of those links automatically, and I gave them their names afterwards.</p>
+  <p class="sub">These are restaurants that often get mentioned in the same comment. The groups were found automatically, and I named them.</p>
   <div class="figs">
     <p><b id="n-places"></b>restaurants linked</p>
     <p><b id="n-groups"></b>groups</p>

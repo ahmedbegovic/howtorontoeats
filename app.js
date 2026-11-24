@@ -154,8 +154,7 @@ function initCuisines({ none, cuisines }) {
 function initVerdicts(se, st) {
   $('#v-n').textContent = fmt(se.ranked);
   $('#v-min').textContent = fmt(se.min); $('#v-mt').textContent = se.min_threads;
-  $('#v-reruns').textContent = fmt(st.reruns); $('#v-pool').textContent = st.positive.pool;
-  for (const [id, k] of [['kp', 'positive'], ['kn', 'negative'], ['kc', 'controversial']]) $('#v-' + id).textContent = st[k].kept.toFixed(1);
+  $('#v-reruns').textContent = fmt(st.reruns);
   for (const k of ['positive', 'negative', 'controversial']) {
     $(`#v-${k} tbody`).innerHTML = se[k].map(([name, p, n]) => { const pp = (100 * p) / (p + n), hold = st[k].holds[name];
       return `<tr title="${esc(name)}: ${plural(p, 'positive mention')}, ${plural(n, 'negative mention')}"><td class="nm">${esc(name)}
@@ -172,7 +171,7 @@ function initClosures(cl) {
   $('#c-n').textContent = `${fmt(cl.closed)} of ${fmt(cl.cohort)}`;
   $('#c-base').textContent = f(base.auc); $('#c-sent').textContent = f(sent.auc);
   $('#c-gain').textContent = sg(sent.auc - base.auc); $('#c-gain-ci').textContent = `${sg(sent.gain_lo)} to ${sg(sent.gain_hi)}`;
-  $('#c-gone').textContent = cl.gone; $('#c-rn').textContent = fmt(cl.recheck.cohort); $('#c-rc').textContent = cl.recheck.closed;
+  $('#c-rn').textContent = fmt(cl.recheck.cohort); $('#c-rc').textContent = cl.recheck.closed;
   $('#c-rci').textContent = `${sg(strict.gain_lo)} to ${sg(strict.gain_hi)}`;
   const rows = (id, rs, f1) => { $(id + ' tbody').innerHTML = rs.map((o) => `<tr><td class="nm">${esc(cap(o.model || o.feature))}</td><td class="r">${f1(o)}</td><td class="r">${f(o.lo)} to ${f(o.hi)}</td></tr>`).join(''); };
   rows('#c-models', cl.models, (m) => f(m.auc));
