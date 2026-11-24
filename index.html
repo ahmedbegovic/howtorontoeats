@@ -43,7 +43,7 @@
     <p><b id="s-areas">178</b>neighbourhoods and municipalities</p>
     <p><b>7.9 B</b>records filtered from 1.3 TB of Reddit archives</p>
   </div>
-  <p class="sub">All of this comes from one subreddit, and it doesn't cover the city evenly. <b id="b-half"></b> of Toronto's 158 neighbourhoods get half of all the mentions. The ten most mentioned have <b id="b-places"></b> of the city's restaurants but get <b id="b-talk"></b> of the mentions. 95% of the mentions I could put on the map are inside the City of Toronto, where less than half of the GTA lives. A restaurant can be full every night and never get mentioned here, so the rankings below only show what this sub thinks.</p>
+  <p class="sub"><b id="b-half"></b> of Toronto's 158 neighbourhoods get half of all the mentions. The ten most mentioned have <b id="b-places"></b> of the city's restaurants but get <b id="b-talk"></b> of the mentions. 95% of the mentions on the map are inside the City of Toronto.</p>
 </section>
 
 <section id="map">
@@ -58,7 +58,7 @@
       <div class="scroll"><table class="rows" id="areas"><thead><tr><th>Area</th><th class="r">Restaurants</th><th class="r">Mentions</th></tr></thead><tbody></tbody></table></div>
     </div>
   </div>
-  <p class="note">A restaurant with several branches is counted once in every area where it has a branch. Outside Toronto each area is an entire municipality, so Mississauga is a single area while Toronto is split into 158.</p>
+  <p class="note">A restaurant with several branches is counted once in every area where it has a branch. Outside Toronto each area is an entire municipality.</p>
 </section>
 
 <section id="lookup">
@@ -80,7 +80,7 @@
     <div><h3>Most talked about</h3><table class="rows" id="at-most"><tbody></tbody></table></div>
     <div><h3>Most overlooked</h3><table class="rows" id="at-least"><tbody></tbody></table></div>
   </div>
-  <p class="note">Only neighbourhoods with at least <span id="at-min"></span> restaurants are ranked, which leaves <span id="at-n"></span>. The bars in both lists are on the same scale. Restaurant counts come from the City of Toronto's DineSafe inspection records (restaurants, take-out, bakeries and bars inspected since 2025), so they include places nobody on the sub mentioned. DineSafe only covers Toronto, which is why the rest of the GTA isn't here.</p>
+  <p class="note">Only neighbourhoods with at least <span id="at-min"></span> restaurants are ranked, which leaves <span id="at-n"></span>. Restaurant counts come from the City of Toronto's DineSafe inspection records (restaurants, take-out, bakeries and bars inspected since 2025). DineSafe only covers Toronto.</p>
 </section>
 
 <section id="cuisine">
@@ -93,14 +93,14 @@
 
 <section id="verdicts">
   <h2>Most loved, hated and argued over</h2>
-  <p class="sub">The model marked every mention as positive, neutral or negative. To be ranked, a restaurant has to have at least <b id="v-min"></b> positive or negative mentions in at least <b id="v-mt"></b> different threads. <b id="v-n"></b> restaurants do. The loved and hated lists are ranked by the low end of a 95% interval on the share of positive (or negative) mentions, so a place with 150 positive and 1 negative ranks above a place with 5 positive and no negative. Controversial means a lot of mentions, split close to evenly.</p>
+  <p class="sub">The model marked every mention as positive, neutral or negative. To be ranked, a restaurant has to have at least <b id="v-min"></b> positive or negative mentions in at least <b id="v-mt"></b> different threads. <b id="v-n"></b> restaurants do. Controversial means a lot of mentions, split close to evenly.</p>
   <div class="legend"><span><i style="background:var(--blue)"></i>Positive mentions</span><span><i style="background:var(--red)"></i>Negative mentions</span></div>
   <div class="grid g3">
     <div><h3>Most loved</h3><table class="rows" id="v-positive"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Most hated</h3><table class="rows" id="v-negative"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Most controversial</h3><table class="rows" id="v-controversial"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">Branches of one restaurant are counted together, and neutral mentions don't count for either side. "Holds" is how often a place stays in its top ten when I rerun the ranking <span id="v-reruns"></span> times. Each rerun resamples the place's threads and redraws every label using the error rates from the accuracy check. On average <span id="v-kp"></span> of the ten most loved hold, <span id="v-kn"></span> of the most hated and <span id="v-kc"></span> of the most controversial. Don't read much into the order of the loved list. <span id="v-pool"></span> places make its top ten in at least one rerun in twenty, because nearly all of their mentions are positive and a single negative one is enough to reshuffle them. I don't rank places mentioned in fewer than five threads. A single thread where everyone piles on is one incident, even if it has a hundred comments.</p>
+  <p class="note">Loved and hated are ranked by the low end of a 95% interval on the share of positive or negative mentions. Branches of one restaurant are counted together, and neutral mentions don't count for either side. "Holds" is how often a place stays in its top ten when I rerun the ranking <span id="v-reruns"></span> times. Each rerun resamples the place's threads and redraws every label using the error rates from the accuracy check. On average <span id="v-kp"></span> of the ten most loved hold, <span id="v-kn"></span> of the most hated and <span id="v-kc"></span> of the most controversial. <span id="v-pool"></span> places make the loved top ten in at least one rerun in twenty.</p>
 </section>
 
 <section id="turns">
@@ -131,7 +131,7 @@
     <div><h3>Models compared</h3><table class="rows" id="c-models"><thead><tr><th>Inputs</th><th class="r">AUC</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
     <div><h3>What moves the odds of closing</h3><table class="rows" id="c-odds"><thead><tr><th>One standard deviation more of</th><th class="r">Odds</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">AUC is the chance that the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. The scores come from five-fold cross-validation repeated 20 times, and the intervals from resampling places. The odds are from the model with all five inputs, where below 1 means less likely to close. Google doesn't give closing dates, so I left out <span id="c-gone"></span> places that the sub was already calling closed before 2026, and I kept comments with closure words out of the inputs. Some places that closed quietly in 2025 may still be counted. When I look only at the <span id="c-rn"></span> places still being mentioned in 2026 (<span id="c-rc"></span> closures), the gain from sentiment is the same size but its interval (<span id="c-rci"></span>) includes zero. With so few closures I'd treat this as a hint to follow up, and I wouldn't call it a result yet.</p>
+  <p class="note">AUC is the chance that the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. The scores come from five-fold cross-validation repeated 20 times, and the intervals from resampling places. The odds are from the model with all five inputs, where below 1 means less likely to close. Google doesn't give closing dates, so I left out <span id="c-gone"></span> places that the sub was already calling closed before 2026, and I kept comments with closure words out of the inputs. When I look only at the <span id="c-rn"></span> places still being mentioned in 2026 (<span id="c-rc"></span> closures), the gain from sentiment is the same size but its interval (<span id="c-rci"></span>) includes zero.</p>
 </section>
 
 <section id="votes">
@@ -153,7 +153,7 @@
   </div>
   <h3>Most mentioned arrivals</h3>
   <div class="scroll"><table class="rows" id="h-big"><thead><tr><th>Restaurant</th><th>First mentioned</th><th>Pattern</th><th class="r">Biggest thread</th><th class="r">Mentions</th></tr></thead><tbody></tbody></table></div>
-  <p class="note">"One thread" means half or more of a place's mentions are in a single thread. "Flash" means 60% or more of the mentions in its first seven months came in the first two. "Steady" means under 35% did, and "fading" is anything in between. "Too recent" means there are fewer than seven months of data. "New" means new to the sub, so it includes places that just opened and older places the sub only just found.</p>
+  <p class="note">"One thread" means half or more of a place's mentions are in a single thread. "Flash" means 60% or more of the mentions in its first seven months came in the first two. "Steady" means under 35% did, and "fading" is anything in between. "Too recent" means there are fewer than seven months of data. "New" means new to the sub.</p>
 </section>
 
 <section id="together">
