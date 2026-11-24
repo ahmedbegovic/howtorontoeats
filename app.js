@@ -81,7 +81,7 @@ function find() {
     const q = fold($('#q').value);
     // names starting with the query first, then names containing it; each group stays in mention order
     const hits = q ? [...all.filter((x) => x.key.startsWith(q)), ...all.filter((x) => !x.key.startsWith(q) && x.key.includes(q))] : [];
-    $('#q-note').textContent = !q ? 'Search any restaurant on the map to see its numbers from the sub and a Google Maps link.'
+    $('#q-note').textContent = !q ? "Type a restaurant's name to see how often it was mentioned and get a link to it on Google Maps."
       : !hits.length ? 'Nothing on the map by that name. I left out places mentioned only once or twice and places outside the GTA.'
       : hits.length > 6 ? `Showing the 6 most mentioned of ${fmt(hits.length)} matches.` : plural(hits.length, 'match') + '.';
     const month = (m) => new Date(m + '-15').toLocaleDateString('en-CA', { month: 'short', year: 'numeric' });

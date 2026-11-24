@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How Toronto Eats</title>
-<meta name="description" content="The 5,433 restaurants across the GTA that r/FoodToronto named in 21 months, counted and mapped.">
+<meta name="description" content="The 5,433 restaurants across the GTA that r/FoodToronto mentioned in 21 months, counted and mapped.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,8 +34,8 @@
 <main>
 
 <section id="top">
-  <h1>Restaurants named on r/FoodToronto</h1>
-  <p class="sub">I had a language model read every post and comment on the sub from January 2025 to September 2026 and list each place it named. I wanted to see which places the sub keeps recommending and which neighbourhoods it barely mentions.</p>
+  <h1>Restaurants mentioned on r/FoodToronto</h1>
+  <p class="sub">I ran every post and comment on r/FoodToronto from January 2025 to September 2026 through a language model and had it pull out the restaurants people mentioned. I wanted to see which ones keep getting recommended, and which neighbourhoods hardly come up.</p>
   <div class="figs">
     <p><b id="hero-n">5,433</b>restaurants across the GTA</p>
     <p><b id="s-mentions">207,713</b>restaurant mentions</p>
@@ -43,36 +43,36 @@
     <p><b id="s-areas">178</b>neighbourhoods and municipalities</p>
     <p><b>7.9 B</b>records filtered from 1.3 TB of Reddit archives</p>
   </div>
-  <p class="sub">Keep in mind that this is one subreddit. People post about the places near them and the places worth arguing about, so the talk is lopsided. <b id="b-half"></b> of Toronto's 158 neighbourhoods get half of the mentions. The ten most discussed get <b id="b-talk"></b> of the talk and have <b id="b-places"></b> of the city's restaurants. And 95% of the mentions I could place are inside the City of Toronto, which has under half of the GTA's people. A place can be packed every night and never come up here, so treat every ranking below as the sub's opinion.</p>
+  <p class="sub">All of this comes from one subreddit, and it doesn't cover the city evenly. <b id="b-half"></b> of Toronto's 158 neighbourhoods get half of all the mentions. The ten most mentioned have <b id="b-places"></b> of the city's restaurants but get <b id="b-talk"></b> of the mentions. 95% of the mentions I could put on the map are inside the City of Toronto, where less than half of the GTA lives. A restaurant can be full every night and never get mentioned here, so the rankings below only show what this sub thinks.</p>
 </section>
 
 <section id="map">
-  <h2>Restaurants named by area</h2>
-  <p class="sub">Toronto's 158 neighbourhoods, plus every other GTA municipality with at least one restaurant named, shaded by how many were named. Hover over an area to see its count, or over a row to find it on the map.</p>
+  <h2>Restaurants by area</h2>
+  <p class="sub">The map shows Toronto's 158 neighbourhoods and the other GTA municipalities where at least one restaurant was mentioned. Darker areas have more restaurants. Hover over an area to see its count, or over a row in the table to find it on the map.</p>
   <div class="maprow">
     <div id="leaf"></div>
     <div class="areas">
       <div class="scale" id="scale"></div>
       <div class="scale-l"><span id="scale-lo"></span><span id="scale-hi"></span></div>
-      <div class="legend"><span><i style="background:var(--neutral)"></i>No restaurants named</span></div>
+      <div class="legend"><span><i style="background:var(--neutral)"></i>No restaurants mentioned</span></div>
       <div class="scroll"><table class="rows" id="areas"><thead><tr><th>Area</th><th class="r">Restaurants</th><th class="r">Mentions</th></tr></thead><tbody></tbody></table></div>
     </div>
   </div>
-  <p class="note">A restaurant with several branches counts once in each area where it has one. Outside Toronto an area is a whole municipality, so all of Mississauga is one area while Toronto is split into 158.</p>
+  <p class="note">A restaurant with several branches is counted once in every area where it has a branch. Outside Toronto each area is an entire municipality, so Mississauga is a single area while Toronto is split into 158.</p>
 </section>
 
 <section id="lookup">
   <h2><label for="q">Look up a restaurant</label></h2>
   <input type="search" id="q" placeholder="Type a name, e.g. Pizzeria Badiali" autocomplete="off" spellcheck="false">
-  <p class="note" id="q-note" aria-live="polite">Search any restaurant on the map to see its numbers from the sub and a Google Maps link.</p>
+  <p class="note" id="q-note" aria-live="polite">Type a restaurant's name to see how often it was mentioned and get a link to it on Google Maps.</p>
   <div class="scroll"><table class="rows" id="q-out" hidden><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Rank</th><th class="r">Positive</th><th class="r">Negative</th><th class="r">Neutral</th><th class="r">First</th><th class="r">Last</th></tr></thead><tbody></tbody></table></div>
 </section>
 
 <section id="attention">
   <h2>Mentions per restaurant, by neighbourhood</h2>
   <div class="figs">
-    <p><b id="at-half"></b>of Toronto's 158 neighbourhoods get half of all the talk</p>
-    <p><b id="at-talk"></b>of the talk goes to the ten most talked about</p>
+    <p><b id="at-half"></b>of Toronto's 158 neighbourhoods get half of all mentions</p>
+    <p><b id="at-talk"></b>of mentions go to the ten most mentioned neighbourhoods</p>
     <p><b id="at-places"></b>of the city's restaurants are in those ten</p>
     <p><b id="at-city"></b>mentions per restaurant citywide</p>
   </div>
@@ -80,12 +80,12 @@
     <div><h3>Most talked about</h3><table class="rows" id="at-most"><tbody></tbody></table></div>
     <div><h3>Most overlooked</h3><table class="rows" id="at-least"><tbody></tbody></table></div>
   </div>
-  <p class="note">Only the <span id="at-n"></span> neighbourhoods with at least <span id="at-min"></span> restaurants are ranked, and both lists use the same bar scale. Restaurant counts come from the City of Toronto's DineSafe inspection records (restaurants, take-out, bakeries and bars inspected since 2025), so they include places the sub never named. DineSafe only covers Toronto, which is why the rest of the GTA isn't here.</p>
+  <p class="note">Only neighbourhoods with at least <span id="at-min"></span> restaurants are ranked, which leaves <span id="at-n"></span>. The bars in both lists are on the same scale. Restaurant counts come from the City of Toronto's DineSafe inspection records (restaurants, take-out, bakeries and bars inspected since 2025), so they include places nobody on the sub mentioned. DineSafe only covers Toronto, which is why the rest of the GTA isn't here.</p>
 </section>
 
 <section id="cuisine">
   <h2>Restaurants by cuisine</h2>
-  <p class="sub">These are the <b id="cu-n"></b> restaurants on the map that Google tags with a cuisine. A dish counts under its cuisine, so sushi and ramen are Japanese, dim sum is Chinese and pizza is Italian.</p>
+  <p class="sub">Google lists a cuisine for <b id="cu-n"></b> of the restaurants on the map. It files some of them under a dish instead, like sushi, ramen or pizza. I moved those to the cuisine the dish belongs to, so a sushi place counts as Japanese and a pizza place as Italian.</p>
   <table class="rows" id="cu"><thead><tr><th class="rk">#</th><th>Cuisine</th><th class="barcell"></th><th class="r">Restaurants</th><th class="r">Share</th></tr></thead><tbody></tbody></table>
   <details><summary id="cu-more"></summary><p id="cu-rest"></p></details>
   <p class="note">The other <span id="cu-none"></span> places have no cuisine and aren't counted. About half of them are cafés, bakeries, bars and food shops. The rest are restaurants Google lists only as "restaurant", or ones I found only in DineSafe, which doesn't record cuisine.</p>
@@ -93,14 +93,14 @@
 
 <section id="verdicts">
   <h2>Most loved, hated and argued over</h2>
-  <p class="sub">The model tagged every mention positive, neutral or negative. To be ranked, a restaurant needs at least <b id="v-min"></b> positive or negative mentions across at least <b id="v-mt"></b> threads, which leaves <b id="v-n"></b>. Loved and hated are scored so that a solid 150 to 1 beats a lucky 5 to 0. Controversial means lots of opinions, split close to even.</p>
+  <p class="sub">The model marked every mention as positive, neutral or negative. To be ranked, a restaurant has to have at least <b id="v-min"></b> positive or negative mentions in at least <b id="v-mt"></b> different threads. <b id="v-n"></b> restaurants do. The loved and hated lists are ranked by the low end of a 95% interval on the share of positive (or negative) mentions, so a place with 150 positive and 1 negative ranks above a place with 5 positive and no negative. Controversial means a lot of mentions, split close to evenly.</p>
   <div class="legend"><span><i style="background:var(--blue)"></i>Positive mentions</span><span><i style="background:var(--red)"></i>Negative mentions</span></div>
   <div class="grid g3">
     <div><h3>Most loved</h3><table class="rows" id="v-positive"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Most hated</h3><table class="rows" id="v-negative"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Most controversial</h3><table class="rows" id="v-controversial"><thead><tr><th>Restaurant</th><th class="r">Mentions</th><th class="r">Holds</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">Branches of one restaurant are counted together, and neutral mentions don't count for either side. "Holds" is how often a place stays in its top ten when I rerun the ranking <span id="v-reruns"></span> times. Each rerun resamples the place's threads and redraws every label using the error rates from the accuracy check. On average <span id="v-kp"></span> of the ten most loved hold, <span id="v-kn"></span> of the most hated and <span id="v-kc"></span> of the most controversial. Don't read much into the order of the loved list. <span id="v-pool"></span> places make its top ten in at least one rerun in twenty, because nearly all of their mentions are positive and a single negative one is enough to reshuffle them. I don't rank places named in fewer than five threads, since one thread piling on is one incident however many comments it has.</p>
+  <p class="note">Branches of one restaurant are counted together, and neutral mentions don't count for either side. "Holds" is how often a place stays in its top ten when I rerun the ranking <span id="v-reruns"></span> times. Each rerun resamples the place's threads and redraws every label using the error rates from the accuracy check. On average <span id="v-kp"></span> of the ten most loved hold, <span id="v-kn"></span> of the most hated and <span id="v-kc"></span> of the most controversial. Don't read much into the order of the loved list. <span id="v-pool"></span> places make its top ten in at least one rerun in twenty, because nearly all of their mentions are positive and a single negative one is enough to reshuffle them. I don't rank places mentioned in fewer than five threads. A single thread where everyone piles on is one incident, even if it has a hundred comments.</p>
 </section>
 
 <section id="turns">
@@ -119,8 +119,8 @@
 </section>
 
 <section id="closures">
-  <h2>Predicting closures from the talk</h2>
-  <p class="sub">This tests whether what the sub said about a place in 2025 predicts that it closed. A logistic regression on each place's 2025 mentions tries to pick out the ones Google lists as permanently closed by October 2026. Sentiment helps a little, and a falling mention rate doesn't help at all.</p>
+  <h2>Predicting which restaurants close</h2>
+  <p class="sub">I tried to predict which restaurants would close, using only what the sub said about them in 2025. The model is a logistic regression, and "closed" means Google lists the place as permanently closed as of October 2026. Sentiment helps a little. Whether a place is being mentioned less often doesn't help at all.</p>
   <div class="figs">
     <p><b id="c-n"></b>independent restaurants with at least 8 mentions in 2025 are now closed</p>
     <p><b id="c-base"></b>AUC from mention count alone</p>
@@ -131,12 +131,12 @@
     <div><h3>Models compared</h3><table class="rows" id="c-models"><thead><tr><th>Inputs</th><th class="r">AUC</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
     <div><h3>What moves the odds of closing</h3><table class="rows" id="c-odds"><thead><tr><th>One standard deviation more of</th><th class="r">Odds</th><th class="r">95% interval</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <p class="note">AUC is the chance that the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. The scores come from five-fold cross-validation repeated 20 times, and the intervals from resampling places. The odds are from the model with all five inputs, where below 1 means less likely to close. Google doesn't give closing dates, so I left out <span id="c-gone"></span> places that the sub was already calling closed before 2026, and I kept comments with closure words out of the inputs. Some places that closed quietly in 2025 may still be counted. When I look only at the <span id="c-rn"></span> places still being named in 2026 (<span id="c-rc"></span> closures), the gain from sentiment is the same size but its interval (<span id="c-rci"></span>) includes zero. With so few closures I'd treat this as a hint to follow up, and I wouldn't call it a result yet.</p>
+  <p class="note">AUC is the chance that the model ranks a place that closed above one that stayed open. 0.5 is a coin flip and 1 is perfect. The scores come from five-fold cross-validation repeated 20 times, and the intervals from resampling places. The odds are from the model with all five inputs, where below 1 means less likely to close. Google doesn't give closing dates, so I left out <span id="c-gone"></span> places that the sub was already calling closed before 2026, and I kept comments with closure words out of the inputs. Some places that closed quietly in 2025 may still be counted. When I look only at the <span id="c-rn"></span> places still being mentioned in 2026 (<span id="c-rc"></span> closures), the gain from sentiment is the same size but its interval (<span id="c-rci"></span>) includes zero. With so few closures I'd treat this as a hint to follow up, and I wouldn't call it a result yet.</p>
 </section>
 
 <section id="votes">
   <h2>Hidden gems and pushback</h2>
-  <p class="sub">Every comment gets a number from 0 to 100 for where its score ranks within its own thread, with 100 as the top comment. A hidden gem has 10 to 60 mentions, at least 85% of them positive, and the comments praising it rank high. A place is getting pushback when the comments criticising it outrank the ones praising it.</p>
+  <p class="sub">Every comment gets a number from 0 to 100 based on how its upvotes compare with the other comments in the same thread, where 100 is the most upvoted. A hidden gem is a place with 10 to 60 mentions, at least 85% of them positive, where the positive comments are also highly upvoted. A place is getting pushback when the comments criticising it are more upvoted than the ones praising it.</p>
   <div class="grid g2">
     <div><h3>Hidden gems</h3><table class="rows" id="x-gems"><thead><tr><th>Restaurant</th><th class="r">Positive</th><th class="r">Praise scores</th></tr></thead><tbody></tbody></table></div>
     <div><h3>Pushed back on</h3><table class="rows" id="x-over"><thead><tr><th>Restaurant</th><th class="r">Praise scores</th><th class="r">Criticism scores</th></tr></thead><tbody></tbody></table></div>
@@ -148,17 +148,17 @@
   <h2>New arrivals</h2>
   <div class="figs">
     <p><b id="h-n"></b>restaurants first mentioned in July 2025 or later that reached 25 mentions</p>
-    <p><b id="h-m0"></b>of a new place's first seven months of talk comes in month one, on average</p>
-    <p><b id="h-top"></b>of the typical arrival's talk comes from a single thread</p>
+    <p><b id="h-m0"></b>of a new place's mentions in its first seven months come in the first month, on average</p>
+    <p><b id="h-top"></b>of a typical new place's mentions come from a single thread</p>
   </div>
   <h3>Most mentioned arrivals</h3>
   <div class="scroll"><table class="rows" id="h-big"><thead><tr><th>Restaurant</th><th>First mentioned</th><th>Pattern</th><th class="r">Biggest thread</th><th class="r">Mentions</th></tr></thead><tbody></tbody></table></div>
-  <p class="note">"One thread" means half or more of a place's talk is in a single thread. "Flash" means 60% or more of its first seven months of talk came in the first two. "Steady" means under 35% did, and "fading" is anything in between. "Too recent" means there are fewer than seven months to go on. "New" means new to the sub, so it covers real openings and older places the sub only just found.</p>
+  <p class="note">"One thread" means half or more of a place's mentions are in a single thread. "Flash" means 60% or more of the mentions in its first seven months came in the first two. "Steady" means under 35% did, and "fading" is anything in between. "Too recent" means there are fewer than seven months of data. "New" means new to the sub, so it includes places that just opened and older places the sub only just found.</p>
 </section>
 
 <section id="together">
-  <h2>Places named together</h2>
-  <p class="sub">When one comment names two to eight places, I link them, and I keep only the pairs that turn up together far more often than their popularity would explain. The groups come from the links alone. I named them by hand afterwards.</p>
+  <h2>Restaurants mentioned together</h2>
+  <p class="sub">If a comment mentions between two and eight restaurants, I link them. I only keep pairs that show up together much more often than you'd expect from how popular each one is. The groups below come out of those links automatically, and I gave them their names afterwards.</p>
   <div class="figs">
     <p><b id="n-places"></b>restaurants linked</p>
     <p><b id="n-groups"></b>groups</p>
@@ -167,7 +167,7 @@
     <table class="rows" id="n-a"><tbody></tbody></table>
     <table class="rows" id="n-b"><tbody></tbody></table>
   </div>
-  <p class="note">Each group lists up to eight of its places.</p>
+  <p class="note">Each group shows up to eight of its restaurants.</p>
 </section>
 
 <section id="method">
@@ -175,7 +175,7 @@
   <dl class="method">
     <dt>Data</dt><dd>Every r/FoodToronto post and comment from January 2025 to September 2026 (10,878 posts, 218,926 comments), filtered out of 42 monthly Reddit dumps from Arctic Shift (about 1.3 TB compressed, 7.9 billion records).</dd>
     <dt>Extraction</dt><dd>A language model read each thread and listed every restaurant mentioned, with a location hint and a sentiment (+1, 0 or −1). I tried keyword matching first and it missed too much.</dd>
-    <dt>Sentiment</dt><dd>A mention is positive when the comment praises the place or recommends it. Naming a place in answer to a request for recommendations counts as positive, and so does agreeing with someone else's recommendation ("+1", "this"). It's neutral when the place is named without a verdict, as in a question, a passing mention or a plain fact. It's negative when the comment criticises the place or warns people off it. Each mention is judged from its own comment only. A comment that mixes praise and criticism still gets one label, whichever way the model read it.</dd>
+    <dt>Sentiment</dt><dd>A mention is positive when the comment praises the place or recommends it. Suggesting a place when someone asks for recommendations counts as positive, and so does agreeing with someone else's recommendation ("+1", "this"). It's neutral when the place comes up without an opinion, as in a question, a passing mention or a plain fact. It's negative when the comment criticises the place or warns people off it. Each mention is judged from its own comment only. A comment that mixes praise and criticism still gets one label, whichever way the model read it.</dd>
     <dt>Accuracy</dt><dd>A second language model read 300 random posts and comments without seeing the first one's answers, and I then checked its labels by hand. Of the mentions the pipeline found, 93.7% were also in that second reading (95% interval 89.9 to 96.1). Of the mentions in the second reading, the pipeline had 91.5% (87.4 to 94.3). Where both found a mention, they gave it the same sentiment 91.9% of the time (87.8 to 94.8). Neutral is the weak spot: the pipeline called 12 of 55 neutral mentions positive.</dd>
     <dt>Restaurants</dt><dd>I searched each name in Google Places and had a model pick the right match. Names Google didn't find were then looked up by exact name in the City of Toronto's DineSafe inspection records. The count is every location I could place inside the GTA, with each branch counted where it stands. It leaves out places outside the GTA, big chains and grocery stores, names with no address, and names mentioned only once or twice.</dd>
     <dt>Map</dt><dd>Toronto neighbourhood boundaries are from City of Toronto Open Data (Open Government Licence - Toronto), and the other GTA municipalities from OpenStreetMap. Each restaurant is counted in the area its Google coordinates fall inside. Whether a place is closed is Google's call, as of October 2026.</dd>
